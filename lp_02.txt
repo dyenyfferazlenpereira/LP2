@@ -1,0 +1,290 @@
+###-CLASSE;
+Uma classe em JavaScript é uma forma de criar objetos que compartilham propriedades e métodos. As classes são uma maneira de estruturar o código, facilitando a reutilização e a organização.
+
+### Exemplo de Classe Carro
+
+javascript
+class Carro {
+    constructor(marca, modelo, ano) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.ano = ano;
+    }
+
+    info() {
+        console.log(`Carro: ${this.marca} ${this.modelo}, Ano: ${this.ano}`);
+    }
+
+    ligar() {
+        console.log(`${this.modelo} está ligado.`);
+    }
+
+    desligar() {
+        console.log(`${this.modelo} está desligado.`);
+    }
+}
+
+// Criando uma instância da classe Carro
+const meuCarro = new Carro('Toyota', 'Corolla', 2020);
+
+// Usando os métodos da classe
+meuCarro.info();   // Saída: Carro: Toyota Corolla, Ano: 2020
+meuCarro.ligar();  // Saída: Corolla está ligado.
+meuCarro.desligar(); // Saída: Corolla está desligado.
+
+
+### Explicação do exemplo
+
+1. *Classe Carro*:
+   - Tem um construtor que recebe marca, modelo e ano como parâmetros.
+   - Define três métodos:
+     - info(): Exibe as informações do carro.
+     - ligar(): Simula o ato de ligar o carro.
+     - desligar(): Simula o ato de desligar o carro.
+
+2. *Instância*:
+   - Criamos um objeto chamado meuCarro a partir da classe Carro, passando os parâmetros necessários.
+   - Chamamos os métodos info(), ligar() e desligar() para ver os resultados.
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+###-OBJETO;
+A linguagem JavaScript é projetada com base em um simples paradigma orientado a objeto. Um objeto é uma coleção de propriedades, e uma propriedade é uma associação entre um nome (ou chave) e um valor. 
+Um valor de propriedade pode ser uma função, que é então considerada um método do objeto.
+
+### Exemplo de Objeto livro
+
+javascript
+const livro = {
+    titulo: 'O Senhor dos Anéis',
+    autor: 'J.R.R. Tolkien',
+    anoPublicacao: 1954,
+    genero: 'Fantasia',
+    
+    // Método para exibir informações do livro
+    detalhes: function() {
+        console.log(`${this.titulo} é um livro de ${this.genero} escrito por ${this.autor} e publicado em ${this.anoPublicacao}.`);
+    }
+};
+
+// Acessando propriedades
+console.log(livro.titulo); // Saída: O Senhor dos Anéis
+console.log(livro.autor);  // Saída: J.R.R. Tolkien
+
+// Chamando o método
+livro.detalhes(); // Saída: O Senhor dos Anéis é um livro de Fantasia escrito por J.R.R. Tolkien e publicado em 1954.
+
+
+### Explicação do Exemplo
+
+1. *Definição do Objeto*:
+   - O objeto livro possui quatro propriedades: titulo, autor, anoPublicacao e genero.
+   - Inclui também um método chamado detalhes, que exibe informações sobre o livro.
+
+2. *Acesso às Propriedades*:
+   - As propriedades são acessadas diretamente usando a notação de ponto.
+
+3. *Método*:
+   - O método detalhes usa this para acessar as propriedades do objeto e exibir uma mensagem formatada no console.
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+###-ATRIBUTO;
+Em JavaScript, um *atributo* geralmente se refere a uma propriedade ou característica de um objeto. Os atributos são utilizados para armazenar dados e podem ser acessados ou modificados através do uso de notação
+de ponto ou colchetes.
+
+### Aqui estão alguns exemplos para esclarecer:
+
+1. *Atributos de Objetos*:
+   javascript
+   const carro = {
+       marca: 'Toyota',
+       modelo: 'Corolla',
+       ano: 2020
+   };
+
+   console.log(carro.marca); // Acessa o atributo 'marca'
+   carro.ano = 2021; // Modifica o atributo 'ano'
+   
+
+2. *Atributos em Elementos HTML*:
+   Quando você está manipulando o DOM (Document Object Model), atributos também se referem às propriedades dos elementos HTML. Por exemplo, você pode acessar ou modificar atributos como id, class, src, etc.
+   javascript
+   const imagem = document.querySelector('img');
+   console.log(imagem.src); // Acessa o atributo 'src'
+   imagem.alt = 'Uma imagem'; // Modifica o atributo 'alt'
+   
+
+3. *Atributos de Funções*:
+   Funções em JavaScript também podem ter atributos. Por exemplo, você pode adicionar propriedades a uma função.
+   javascript
+   function saudacao() {
+       console.log('Olá!');
+   }
+
+   saudacao.linguagem = 'Português'; // Adiciona um atributo à função
+   console.log(saudacao.linguagem); // Acessa o atributo
+   
+
+Resumindo, atributos em JavaScript são basicamente propriedades que armazenam valores em objetos e elementos HTML, permitindo que você acesse e manipule dados de forma flexível.
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+###-MÉTODO;
+Em JavaScript, os métodos são funções associadas a uma classe que definem o comportamento de um objeto. Eles podem ter parâmetros e retornar valores. Para adicionar um método a uma classe, basta declarar uma função 
+dentro da definição da classe. Além dos métodos, também temos as propriedades em uma classe JavaScript.
+
+### Exemplo de método
+javascript
+const pessoa = {
+    nome: 'Lúcia',
+    idade: 30,
+    profissao: 'Desenvolvedora',
+    
+    // Método para apresentar a pessoa
+    apresentar: function() {
+        console.log(`Olá, meu nome é ${this.nome}, tenho ${this.idade} anos e sou ${this.profissao}.`);
+    }
+};
+
+// Chamando o método
+pessoa.apresentar(); // Saída: Olá, meu nome é Lúcia, tenho 30 anos e sou Desenvolvedora.
+
+
+### Explicação:
+
+1. *Objeto pessoa*:
+   - Tem três propriedades: nome, idade, e profissao.
+   - Tem um método chamado apresentar, que usa a palavra-chave this para acessar as propriedades do objeto.
+
+2. *Chamada do Método*:
+   - Quando chamamos pessoa.apresentar(), o método exibe uma mensagem no console com as informações da pessoa.
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+###-HERANÇA;
+A herança de classes em JavaScript é baseada no conceito de protótipos. Cada objeto em JavaScript possui um protótipo, que é um objeto do qual ele herda propriedades e métodos. Quando uma propriedade ou método é
+acessado em um objeto, o JavaScript primeiro verifica se o objeto possui essa propriedade ou método.
+
+### Exemplo de Herança em JavaScript
+
+javascript
+// Função construtora para o objeto base
+function Animal(nome) {
+    this.nome = nome;
+}
+
+// Método do objeto base
+Animal.prototype.falar = function() {
+    console.log(`${this.nome} faz algum som.`);
+};
+
+// Função construtora para o objeto derivado (herdando de Animal)
+function Cachorro(nome, raca) {
+    Animal.call(this, nome); // Chama o construtor da classe pai
+    this.raca = raca;
+}
+
+// Estabelecendo a herança
+Cachorro.prototype = Object.create(Animal.prototype);
+Cachorro.prototype.constructor = Cachorro;
+
+// Método específico do objeto derivado
+Cachorro.prototype.falar = function() {
+    console.log(`${this.nome} diz: Au Au!`);
+};
+
+// Criando instâncias
+const meuCachorro = new Cachorro('Rex', 'Labrador');
+
+// Chamando os métodos
+meuCachorro.falar(); // Saída: Rex diz: Au Au!
+
+
+### Explicação:
+
+1. *Função Construtora Animal*:
+   - Cria um objeto Animal com uma propriedade nome.
+   - Tem um método falar que imprime uma mensagem genérica.
+
+2. *Função Construtora Cachorro*:
+   - Herda de Animal usando Animal.call(this, nome) para inicializar a propriedade nome.
+   - Adiciona uma nova propriedade raca.
+
+3. *Estabelecendo a Herança*:
+   - Cachorro.prototype = Object.create(Animal.prototype) cria um novo objeto que herda do protótipo de Animal.
+   - Define o construtor correto para Cachorro.
+
+4. *Método Específico*:
+   - O método falar é sobrescrito em Cachorro para dar uma resposta específica.
+
+5. *Instância e Uso*:
+   - Uma instância de Cachorro é criada e seu método falar é chamado, mostrando como a herança funciona.
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+###-POLIMORFISMO;
+O polimorfismo é a capacidade de um objeto responder de forma diferente a um mesmo método, dependendo do contexto em que é chamado. Isso significa que você pode usar o mesmo método com diferentes objetos e obter
+resultados diferentes, o que pode ser útil em muitas situações.
+
+### Exemplo de Polimorfismo em JavaScript
+
+javascript
+// Classe base Animal
+class Animal {
+    falar() {
+        console.log('O animal faz um som.');
+    }
+}
+
+// Classe derivada Cachorro
+class Cachorro extends Animal {
+    falar() {
+        console.log('O cachorro diz: Au Au!');
+    }
+}
+
+// Classe derivada Gato
+class Gato extends Animal {
+    falar() {
+        console.log('O gato diz: Miau!');
+    }
+}
+
+// Função para fazer os animais falarem
+function fazerAnimalFalar(animal) {
+    animal.falar();
+}
+
+// Criando instâncias
+const meuCachorro = new Cachorro();
+const meuGato = new Gato();
+
+// Usando o polimorfismo
+fazerAnimalFalar(meuCachorro); // Saída: O cachorro diz: Au Au!
+fazerAnimalFalar(meuGato);     // Saída: O gato diz: Miau!
+
+
+### Explicação:
+
+1. *Classe Base Animal*:
+   - Tem um método falar que imprime uma mensagem genérica.
+
+2. *Classes Derivadas Cachorro e Gato*:
+   - Ambas herdam de Animal e sobrescrevem o método falar para fornecer suas próprias implementações.
+
+3. *Função fazerAnimalFalar*:
+   - Aceita um objeto do tipo Animal (ou qualquer um de seus derivados) e chama o método falar. Isso demonstra o polimorfismo, pois o comportamento varia dependendo do tipo do objeto passado.
+
+4. *Instâncias e Chamada da Função*:
+   - Criamos instâncias de Cachorro e Gato, e chamamos a função fazerAnimalFalar, que resulta em diferentes saídas dependendo do objeto.
